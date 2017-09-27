@@ -45,9 +45,9 @@ public class BubbleSorter {
      * 适用于基本有序的序列或数据量小的
      *
      * @param a
-     * @param <AnyType>
+     * @param <T>
      */
-    public static <AnyType extends Comparable<? super AnyType>> void sort(AnyType[] a) {
+    public static <T extends Comparable<? super T>> void sort(T[] a) {
 
 //        int count = 0;
         boolean flag = true;

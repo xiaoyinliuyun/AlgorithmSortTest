@@ -13,13 +13,13 @@ public class QuickSorter {
      * 对空间复杂度有要求
      *
      * @param a
-     * @param <AnyType>
+     * @param <T>
      */
-    public static <AnyType extends Comparable<? super AnyType>> void sort(AnyType[] a) {
+    public static <T extends Comparable<? super T>> void sort(T[] a) {
         quickSort(a, 0, a.length - 1);
     }
 
-    private static <AnyType extends Comparable<? super AnyType>> AnyType median3(AnyType[] a, int left, int right) {
+    private static <T extends Comparable<? super T>> T median3(T[] a, int left, int right) {
 
         int center = (left + right) / 2;
         if (a[center].compareTo(a[left]) < 0) {
@@ -36,16 +36,16 @@ public class QuickSorter {
         return a[right - 1];
     }
 
-    private static <AnyType extends Comparable<? super AnyType>> void swapReferences(AnyType[] a, int left, int center) {
-        AnyType tmp = a[left];
+    private static <T extends Comparable<? super T>> void swapReferences(T[] a, int left, int center) {
+        T tmp = a[left];
         a[left] = a[center];
         a[center] = tmp;
     }
 
 
-    private static <AnyType extends Comparable<? super AnyType>> void quickSort(AnyType[] a, int left, int right) {
+    private static <T extends Comparable<? super T>> void quickSort(T[] a, int left, int right) {
         if (left + MAX_LENGTH_INSERT_SORT <= right) {//7个数内 使用插入排序
-            AnyType pivot = median3(a, left, right);
+            T pivot = median3(a, left, right);
 
             //Begin partitioning
             int i = left, j = right - 1;
@@ -68,7 +68,7 @@ public class QuickSorter {
         }
     }
 
-    private static <AnyType extends Comparable<? super AnyType>> void insertionSort(AnyType[] a, int left, int right) {
+    private static <T extends Comparable<? super T>> void insertionSort(T[] a, int left, int right) {
         InsertionSorter.sort(a, left, right);
     }
 

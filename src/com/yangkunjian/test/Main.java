@@ -81,7 +81,7 @@ public class Main {
 //        InsertionSorter.sort(datas, 3, 7);
     }
 
-    private static final int N = 100000;
+    private static final int N = 1000000;
 
     public static Integer[] random() {
         Integer[] int_array = new Integer[N];

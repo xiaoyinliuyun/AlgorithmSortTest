@@ -25,13 +25,13 @@ public class InsertionSorter {
      * 直接插入排序比冒泡和简单选择排序的性能要好一些
      *
      * @param a
-     * @param <AnyType>
+     * @param <T>
      */
-    public static <AnyType extends Comparable<? super AnyType>> void sort(AnyType[] a) {
+    public static <T extends Comparable<? super T>> void sort(T[] a) {
         ArrayUtils.printArray(a);
         int j = 0;
         for (int p = 1; p < a.length; p++) {
-            AnyType tmp = a[p];
+            T tmp = a[p];
             for (j = p; j > 0 && tmp.compareTo(a[j - 1]) < 0; j--) {
                 a[j] = a[j - 1];
             }
@@ -40,10 +40,10 @@ public class InsertionSorter {
         }
     }
 
-    public static <AnyType extends Comparable<? super AnyType>> void sort(AnyType[] a, int left, int right) {
+    public static <T extends Comparable<? super T>> void sort(T[] a, int left, int right) {
         int j = 0;
         for (int p = left + 1; p < right + 1; p++) {
-            AnyType tmp = a[p];
+            T tmp = a[p];
             for (j = p; j > left && tmp.compareTo(a[j - 1]) < 0; j--) {
                 a[j] = a[j - 1];
             }

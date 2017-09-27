@@ -28,9 +28,9 @@ public class SimpleSelectSorter {
      * 交换：最好的时候交换 0 次 最差的时候交换 n-1次
      *
      * @param a
-     * @param <AnyType>
+     * @param <T>
      */
-    public static <AnyType extends Comparable<? super AnyType>> void sort(AnyType[] a) {
+    public static <T extends Comparable<? super T>> void sort(T[] a) {
 
         for (int i = 0, min = 0; i < a.length; i++) {
             min = i;

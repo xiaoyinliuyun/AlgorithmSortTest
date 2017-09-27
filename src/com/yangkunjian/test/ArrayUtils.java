@@ -11,13 +11,13 @@ public class ArrayUtils {
         array[index2] = temp;
     }
 
-    public static <AnyType extends Comparable<? super AnyType>> void swapReferences(AnyType[] a, int i, int i1) {
-        AnyType temp = a[i];
+    public static <T extends Comparable<? super T>> void swapReferences(T[] a, int i, int i1) {
+        T temp = a[i];
         a[i] = a[i1];
         a[i1] = temp;
     }
 
-    public static <AnyType extends Comparable<? super AnyType>> void printArray(AnyType[] a) {
+    public static <T extends Comparable<? super T>> void printArray(T[] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + ",");
         }
